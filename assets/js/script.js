@@ -76,13 +76,55 @@ function initAnimations() {
         $('i', this).removeClass('animated tada');
 	});
 }
+function initMandrillCallback() {
+	
+	$("#mandrill-callback").click(function() {
+		var name = $("#modal-name").val();
+		var tel = $("#modal-tel").val();
+		var topic = $("#modal-topic").val();
 
+		$.ajax({
+			type : "POST",
+			url : "https://mandrillapp.com/api/1.0/messages/send.json",
+			data : {
+				"key" : "qbZ25AmbFMErdHQuer62LQ",
+				"message" : {
+					"from_email" : "callback@subzerokz.github.io",
+					"from_name" : "callback",
+					"to" : [ {
+						"email" : "subzero.kz@yandex.ru",
+						"type" : "to"
+					} ],
+					"autotext" : "true",
+					"subject" : "callback: " + topic,
+					"html" : "<p><ul><li>" + name + "</li><li>" + tel + "</li>" + 
+							 "<li>" + topic + "</li></ul></p>"
+				},
+				"async" : false
+			}
+		})
+		.done(function(response) {
+			alert('Ваш запрос был отправлен!');
+			// reset field after successful submission
+			$("#modal-name").val('');
+			$("#modal-tel").val('');
+			$("#modal-topic").val('');
+		})
+		.fail(function(response) {
+			alert('Во время отправки запроса произошла ошибка.');
+		});
+		
+		//return false; // prevent page refresh
+	});
+}
 
 $(document).ready(function () {
     initNavbar();
     initPortfolio();
     initAnimations();
+    initMandrillCallback();
 });
+
 $(window).load(function () {
     $(".loader .fading-line").fadeOut();
     $(".loader").fadeOut("slow");

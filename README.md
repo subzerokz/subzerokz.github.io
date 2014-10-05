@@ -16,6 +16,7 @@ Responsive landing page based on [Merlin](http://www.github.com/halibegic/merlin
  * [jQuery Appear](https://github.com/bas2k/jquery.appear/)
  * [flickr](https://www.flickr.com/)
  * [favicon](http://findicons.com/)
+ * [Mandrill](https://mandrillapp.com/)
  
  
 
