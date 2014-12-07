@@ -163,6 +163,13 @@ a:focus {
 #services .service > i { margin-top: 60px }
 #services .service:hover > i { color: #71be3c }
 
+#profiles {}
+#profile-grid { overflow: auto; white-space: normal; }
+#profile-grid .profile { padding-bottom: 40px; }
+#profiles .profile-name { font-weight: bold; }
+#profiles .thumbnail {margin-bottom:6px;}
+#profiles .panel-thumbnail { overflow: hidden; }
+#profiles .img-rounded { border-radius: 4px 4px 0 0;}
 #contact {
   background: url(../img/cover/contact.jpg);
   background-repeat: no-repeat;
