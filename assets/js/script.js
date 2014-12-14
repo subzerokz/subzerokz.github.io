@@ -5,6 +5,7 @@ jQuery(document).ready(function() {
     initNavbar();
     initAnimations();	
     initMandrillCallback();
+    initMandrillRequest();
     initLightbox();
 });
 
@@ -91,7 +92,7 @@ function initMandrillCallback() {
 						"type" : "to"
 					} ],
 					"autotext" : "true",
-					"subject" : "callback: " + topic,
+					"subject" : "callback",
 					"html" : "<p><ul><li>" + name + "</li><li>" + tel + "</li>" + 
 							 "<li>" + topic + "</li></ul></p>"
 				},
@@ -107,6 +108,50 @@ function initMandrillCallback() {
 		})
 		.fail(function(response) {
 			alert('Во время отправки запроса произошла ошибка.');
+		});
+		
+		//return false; // prevent page refresh
+	});
+}
+
+function initMandrillRequest() {
+	
+	$("#mandrill-request").click(function() {
+		var type = $("#modal-profile-type").val();
+		var size = $("#modal-profile-size").val();
+		var amount = $("#modal-profile-amount").val();
+		var desc = $("#modal-profile-desc").val();
+
+		$.ajax({
+			type : "POST",
+			url : "https://mandrillapp.com/api/1.0/messages/send.json",
+			data : {
+				"key" : "qbZ25AmbFMErdHQuer62LQ",
+				"message" : {
+					"from_email" : "request@subzerokz.github.io",
+					"from_name" : "request",
+					"to" : [ {
+						"email" : "subzero.kz@yandex.ru",
+						"type" : "to"
+					} ],
+					"autotext" : "true",
+					"subject" : "request",
+					"html" : "<p><ul><li>Тип профиля :" + type + "</li><li>Размеры: " + size + "</li>" + 
+							 "<li>Количество: " + amount + "</li><li>Примечание: " + desc + "</li></ul></p>"
+				},
+				"async" : false
+			}
+		})
+		.done(function(response) {
+			alert('Ваш заявка была отправлен!');
+			// reset field after successful submission
+			type.val('');
+			size.val('');
+			amount.val('');
+			desc.val('');
+		})
+		.fail(function(response) {
+			alert('Во время отправки заявки произошла ошибка.');
 		});
 		
 		//return false; // prevent page refresh
