@@ -123,6 +123,6 @@ function initLightbox() {
       	var title = $(this).attr("title");
       	$('.modal-title').html("Профиль " + title);      	
       	content.html($(this).html());
-      	$(".modal-profile").modal({show:true});
+      	$("#modal-profile-lg").modal('toggle');
     });
 }

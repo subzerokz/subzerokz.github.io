@@ -164,12 +164,14 @@ a:focus {
 #services .service:hover > i { color: #71be3c }
 
 #profiles {}
-#profile-grid { overflow: auto; white-space: normal; }
-#profile-grid .profile { padding-bottom: 40px; }
+#profiles .profile-grid { /* overflow: hidden; */ }
+/* avoid bad floating */
+#profiles .profile-grid .clearfix { padding-bottom: 30px; }
 #profiles .profile-name { font-weight: bold; }
-#profiles .thumbnail {margin-bottom:6px;}
+#profiles .thumbnail { margin-bottom: 0; padding: 0;}
 #profiles .panel-thumbnail { overflow: hidden; }
 #profiles .img-rounded { border-radius: 4px 4px 0 0;}
+
 #contact {
   background: url(../img/cover/contact.jpg);
   background-repeat: no-repeat;
@@ -212,7 +214,8 @@ a:focus {
   #portfolio .items li { width: 50% }
   #testimonials .quote { padding: 0 70px }
 }
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
+	#profiles .thumbnail { margin-bottom: 30px; }
   .page .content.cover { padding: 160px 0 }
   #testimonials .quote { padding: 0 50px }
   #testimonials .carousel-control.right { right: 10px }
