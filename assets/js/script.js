@@ -118,10 +118,11 @@ function initLightbox() {
     /* show lightbox when clicking a thumbnail */
     $('a.thumb').click(function(event){
     	event.preventDefault();
-    	var content = $('.modal-body');
+    	var content = $('.modal-body').filter("#modal-label-profile");
+    	console.log(content);
     	content.empty();
       	var title = $(this).attr("title");
-      	$('.modal-title').html("Профиль " + title);      	
+      	$('.modal-title').filter("#modal-label-profile").html("Профиль " + title);      	
       	content.html($(this).html());
       	$("#modal-profile-lg").modal('toggle');
     });
