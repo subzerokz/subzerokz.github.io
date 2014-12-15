@@ -100,7 +100,7 @@ function initMandrillCallback() {
 			}
 		})
 		.done(function(response) {
-			alert('Ваш запрос был отправлен!');
+			alert('Ваш запрос был успешно отправлен!');
 			// reset field after successful submission
 			$("#modal-name").val('');
 			$("#modal-tel").val('');
@@ -143,7 +143,7 @@ function initMandrillRequest() {
 			}
 		})
 		.done(function(response) {
-			alert('Ваш заявка была отправлен!');
+			alert('Ваш заявка была успешно отправлен!');
 			// reset field after successful submission
 			type.val('');
 			size.val('');
