@@ -105,7 +105,7 @@
 				<div class="heading">
 					<h2>Что мы делаем</h2>
 					<div class="border"></div>
-					<p>Мы изготавливаем дверные уплотнители для промышленного, торгового и
+					<p>Мы изготавливаем и продаем дверные уплотнители для промышленного, торгового и
 						бытового холодильного оборудования.</p>
 					<br />
 					<br />
@@ -225,26 +225,70 @@
 				</div>
 				<div class="modal-body" id="modal-label-request">
 					<div class="clearfix">
-						<form class="form col-md-12 center-block">
-							<div class="form-group">
-								<input type="text" class="form-control input-lg" 
-									id="modal-profile-type" placeholder="Тип профиля">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control input-lg bfh-phone"
-									id="modal-profile-size" placeholder="Размеры: ВхШ в см.">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control input-lg"
-									id="modal-profile-amount" placeholder="Количество">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control input-lg"
-									id="modal-profile-desc" placeholder="Примечание">
-							</div>
-							<div class="form-group">
-								<button class="btn btn-primary btn-lg btn-block"
-									data-dismiss="modal" id="mandrill-request">Отправить</button>
+						<form class="form center-block" role="form">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form-group">
+										<input type="text" class="form-control" id="modal-req-name" 
+											placeholder="Ваше имя">
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<input type="text" class="form-control bfh-phone" 
+											id="modal-req-tel" placeholder="Ваш телефон">
+									</div>	
+								</div>
+								<div class="col-lg-12">
+									<div class="form-group">
+										<input type="text" class="form-control"
+											id="modal-req-addr" placeholder="Адрес">
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="form-group">
+										<!-- <input type="text" class="form-control" 
+											id="modal-profile-type" placeholder="Тип профиля"> -->
+											<!-- <label for="modal-profile-type">Тип профиля</label> -->
+											<select class="form-control" id="modal-profile-type">
+											  <option value="C2">C2</option>
+											  <option value="E1">E1</option>
+											  <option value="EA">EA</option>
+											  <option value="LG">LG</option>
+											  <option value="MA">MA</option>
+											  <option value="OM">OM</option>
+											  <option value="P1">P1</option>
+											  <option value="P2">P2</option>
+											  <option value="ST">ST</option>
+											</select>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="form-group">
+										<input type="text" class="form-control bfh-phone"
+											id="modal-profile-size" placeholder="Размеры">
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="form-group">
+										<input type="text" class="form-control"
+											id="modal-profile-amount" placeholder="Кол-во">
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="form-group">
+										<!-- <input type="text" class="form-control"
+											id="modal-profile-desc" placeholder="Примечание"> -->
+										<textarea class="form-control" id="modal-profile-desc" 
+											rows="1" placeholder="Примечание"></textarea>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="form-group">
+										<button class="btn btn-primary btn-lg btn-block"
+											data-dismiss="modal" id="mandrill-request">Отправить</button>
+									</div>
+								</div>
 							</div>
 						</form>
 					</div>

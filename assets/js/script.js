@@ -86,15 +86,17 @@ function initMandrillCallback() {
 				"key" : "qbZ25AmbFMErdHQuer62LQ",
 				"message" : {
 					"from_email" : "callback@subzerokz.github.io",
-					"from_name" : "callback",
+					"from_name" : "обратный звонок",
 					"to" : [ {
 						"email" : "subzero.kz@yandex.ru",
 						"type" : "to"
 					} ],
 					"autotext" : "true",
 					"subject" : "callback",
-					"html" : "<p><ul><li>" + name + "</li><li>" + tel + "</li>" + 
-							 "<li>" + topic + "</li></ul></p>"
+					"html" : "<h2>Обратный звонок</h2>" +
+					"<ul><li><b>Имя</b>: " + name + "</li>" +
+					"<li><b>Телефон</b>: " + tel + "</li>" +
+					"<li><b>Тема</b>: " + topic + "</li></ul>"
 				},
 				"async" : false
 			}
@@ -102,9 +104,9 @@ function initMandrillCallback() {
 		.done(function(response) {
 			alert('Ваш запрос был успешно отправлен!');
 			// reset field after successful submission
-			$("#modal-name").val('');
-			$("#modal-tel").val('');
-			$("#modal-topic").val('');
+			name.val('');
+			tel.val('');
+			topic.val('');
 		})
 		.fail(function(response) {
 			alert('Во время отправки запроса произошла ошибка.');
@@ -117,6 +119,9 @@ function initMandrillCallback() {
 function initMandrillRequest() {
 	
 	$("#mandrill-request").click(function() {
+		var name = $("#modal-req-name").val();
+		var tel = $("#modal-req-tel").val();
+		var addr = $("#modal-req-addr").val();
 		var type = $("#modal-profile-type").val();
 		var size = $("#modal-profile-size").val();
 		var amount = $("#modal-profile-amount").val();
@@ -126,18 +131,25 @@ function initMandrillRequest() {
 			type : "POST",
 			url : "https://mandrillapp.com/api/1.0/messages/send.json",
 			data : {
-				"key" : "qbZ25AmbFMErdHQuer62LQ",
+				"key" : "-mafh-KcxBX7xBZ_0QGnNw",
 				"message" : {
 					"from_email" : "request@subzerokz.github.io",
-					"from_name" : "request",
+					"from_name" : "Заявка",
 					"to" : [ {
 						"email" : "subzero.kz@yandex.ru",
 						"type" : "to"
 					} ],
 					"autotext" : "true",
 					"subject" : "request",
-					"html" : "<p><ul><li>Тип профиля :" + type + "</li><li>Размеры: " + size + "</li>" + 
-							 "<li>Количество: " + amount + "</li><li>Примечание: " + desc + "</li></ul></p>"
+					"html" : "<h2>Контакты</h2>" +
+					"<ul><li><b>Имя</b>: " + name + "</li>" +
+					"<li><b>Телефон</b>: " + tel + "</li>" +
+					"<li><b>Адрес</b>: " + addr + "</li></ul>" +
+					"<h2>Профиль</h2>" +
+					"<ul><li><b>Тип профиля</b>: " + type + "</li>" +
+					"<li><b>Размеры</b>: " + size + "</li>" + 
+					"<li><b>Количество</b>: " + amount + "</li>" +
+					"<li><b>Примечание</b>: " + desc + "</li></ul>"
 				},
 				"async" : false
 			}
@@ -145,7 +157,10 @@ function initMandrillRequest() {
 		.done(function(response) {
 			alert('Ваш заявка была успешно отправлен!');
 			// reset field after successful submission
-			type.val('');
+			name.val('');
+			tel.val('');
+			addr.val('');
+			//type.val('');
 			size.val('');
 			amount.val('');
 			desc.val('');
