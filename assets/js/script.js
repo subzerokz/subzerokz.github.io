@@ -155,7 +155,7 @@ function initMandrillRequest() {
 			}
 		})
 		.done(function(response) {
-			alert('Ваш заявка была успешно отправлен!');
+			alert('Заявка была отправлена!');
 			// reset field after successful submission
 			name.val('');
 			tel.val('');
