@@ -80,16 +80,19 @@
 					<a class="navbar-brand nav-external" href="#home">Акторг</a>
 				</div>
 				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-left">
 						<li class="active"><a href="#home">Домой</a></li>
-						<li><a href="#services">Сервис</a></li>
-						<li><!-- заявка -->
+<!-- 						заявка
+						<li class="external">
 							<a href="" data-toggle="modal" data-target="#modal-request">заявка</a>
 						</li>
-						<li><!-- звонок -->
+						звонок
+						<li class="external">
 							<a href="" data-toggle="modal" data-target="#modal-callback">звонок</a>
-						</li>
+						</li> -->
+						<li><a href="#services">Сервис</a></li>
               			<li><a href="#profiles">Профили</a></li>
+						<li><a href="#manuals">Инструкции</a></li>
               			
 						<!-- 
 						<li><a href="#clients">Отзывы клиентов</a></li>
@@ -97,7 +100,22 @@
  						-->
 						
 						<li><a href="#contact">Контакты</a></li>
+						
 					</ul>
+					<ul class="nav navbar-nav navbar-right" id="buttons">
+<!-- 						заявка
+						<li class="external">
+							<a href="" data-toggle="modal" data-target="#modal-request">заявка</a>
+						</li>
+						звонок
+						<li class="external">
+							<a href="" data-toggle="modal" data-target="#modal-callback">звонок</a>
+						</li> -->
+						<li><a href="" class="btn btn-green" data-toggle="modal" data-target="#modal-callback">звонок</a></li>
+						<li><a href="" class="btn btn-blue" data-toggle="modal" data-target="#modal-request">заявка</a></li>
+					</ul>
+					
+					
 				</div>
 			</div>
 		</nav>
@@ -469,6 +487,38 @@
 			</div>
 		</div>
 	<!-- //.modal-profile -->
+	
+	<!-- #MANUALS -->
+    <section id="manuals" class="page">
+      	<div class="container">
+        	<div class="content text-center">
+          		<div class="heading">
+            		<h2>Инструкции</h2>
+            		<div class="border"></div>
+					<div class="text-center">
+						<p class="text-center">
+							Вам могут быть полезными следующие инструкции:
+							<ul class="fa-ul text-left">
+								<li>
+									<i class="fa-li fa fa-puzzle-piece"></i>
+									<a href="../pick.html">подбор типа профиля</a>
+								</li>
+								<li>
+									<i class="fa-li fa fa-sign-in"></i>
+									<a href="../install.html">установка уплотнителя</a>
+								</li>
+								<li>
+									<i class="fa-li fa fa-expand"></i>
+									<a href="../measure.html">замеры уплотнительной рамки</a>
+								</li>
+							</ul>
+						</p>
+					</div>
+          		</div>
+			</div>
+		</div>
+	</section>
+	<!-- //#MANUALS -->
 	
 	<!-- #CONTACT -->
 	<section id="contact" class="page">

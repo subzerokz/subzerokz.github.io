@@ -93,12 +93,41 @@ a:focus {
   font-weight: 600;
   text-transform: uppercase;
 }
+.navbar-default .navbar-nav#buttons > li {
+	padding-top: 8px;
+	padding-left: 16px;
+}
+.navbar-default .navbar-nav#buttons > li > a {
+	padding: 5px 10px;
+	color: white;
+}
+
+.navbar-default .navbar-nav#buttons > li > a.btn-green {
+	border: 2px solid #71be3c;
+	background-color: #71be3c;
+}
+.navbar-default .navbar-nav#buttons > li > a.btn-blue {
+	border: 2px solid #0093cf;
+	background-color: #0093cf;
+}
+.navbar-default .navbar-nav#buttons > li > a.btn-green:hover,
+.navbar-default .navbar-nav#buttons > li > a.btn-green:focus {
+	background-color: white;
+	color: #71be3c;
+}
+.navbar-default .navbar-nav#buttons > li > a.btn-blue:hover,
+.navbar-default .navbar-nav#buttons > li > a.btn-blue:focus {
+	background-color: white;
+	color: #0093cf;
+}
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #0093cf;
   background-color: transparent;
 }
+
 .navbar-default .navbar-toggle { border-color: transparent }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus { background-color: transparent }
@@ -152,7 +181,7 @@ a:focus {
 #services .service > i { margin-top: 60px }
 #services .service:hover > i { color: #71be3c }
 
-#profiles {}
+#profiles { border-bottom: solid 1px #e7e7e7; }
 #profiles .profile-grid { /* overflow: hidden; */ }
 /* avoid bad floating */
 #profiles .profile-grid .clearfix { padding-bottom: 30px; }
@@ -160,6 +189,10 @@ a:focus {
 #profiles .thumbnail { margin-bottom: 0; padding: 0;}
 #profiles .panel-thumbnail { overflow: hidden; }
 #profiles .img-rounded { border-radius: 4px 4px 0 0;}
+
+#manuals { background-color: #f5f5f5; }
+#manuals .content {   margin-top: 60px; margin-bottom: 60px;  }
+
 
 #contact {
   background: url(../img/cover/contact.jpg);
@@ -202,6 +235,7 @@ a:focus {
 @media screen and (max-width: 991px) { 
   #portfolio .items li { width: 50% }
   #testimonials .quote { padding: 0 70px }
+/*   .navbar-collapse { width: auto; border-top: 0; box-shadow: none; } */
 }
 @media (max-width: 767px) {
 	#profiles .thumbnail { margin-bottom: 30px; }
